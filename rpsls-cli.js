@@ -47,7 +47,7 @@ if (args.r || process.argv[process.argv.indexOf('--rules')]){
 }
 
 
-if (process.argv[2].toUpperCase() !== 'ROCK' && process.argv[2].toUpperCase() !== 'PAPER' && process.argv[2].toUpperCase() !== 'SCISSORS' && process.argv[2].toUpperCase() !== 'LIZARD'&&process.argv[2].toUpperCase() !== 'SPOCK'){
+if (process.argv[2] !== undefined && process.argv[2].toUpperCase() !== 'ROCK' && process.argv[2].toUpperCase() !== 'PAPER' && process.argv[2].toUpperCase() !== 'SCISSORS' && process.argv[2].toUpperCase() !== 'LIZARD'&&process.argv[2].toUpperCase() !== 'SPOCK'){
    
     console.error (`${process.argv[2]} is out of range.`)
     help();
@@ -55,4 +55,4 @@ if (process.argv[2].toUpperCase() !== 'ROCK' && process.argv[2].toUpperCase() !=
     process.exit(1);
 }
 
-console.log(rpsls(process.argv[2]));
+console.log(JSON.stringify(rpsls(process.argv[2])));

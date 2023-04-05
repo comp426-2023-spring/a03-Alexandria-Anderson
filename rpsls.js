@@ -1,7 +1,6 @@
 
-//need an importable rps function that returns an object with the players move, the opponents move, then the result given a move
-//need and importable rpsls function that returns an object with the players move, the opponents move, then the result given a move
-//both need to accept uppercase and lowercase letters
+//node-rpsls.js still not working
+
 export { rps, rpsls};
 function rps(shot){
    
