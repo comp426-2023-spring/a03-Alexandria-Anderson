@@ -22,6 +22,7 @@ function help(){
 }
 if (args.h || process.argv[process.argv.indexOf('--help')]){
     help();
+    process.exit(1);
 }
 
 //rule message
@@ -33,13 +34,14 @@ function rules(){
         "  - Paper COVERS Rock\n" + 
         "  - Rock CRUSHES Scissors\n"
         )
+    process.exit(1);
 }
 if (args.r || process.argv[process.argv.indexOf('--rules')]){
   rules();
 }
 
 if (process.argv[2] != undefined && process.argv[2].toUpperCase() !== 'ROCK' && process.argv[2].toUpperCase() !== 'PAPER' && process.argv[2].toUpperCase() !== 'SCISSORS'){
-
+    
     console.error (`${process.argv[2]} is out of range.`);
     help();
     rules();
@@ -54,5 +56,3 @@ console.log(JSON.stringify(rps(process.argv[2])));
 
 //if the argument is not rock, paper, or scissors then return an out of range error and the error 
 //handler should return the help and rule dialogue
-
-//

@@ -22,6 +22,7 @@ function help(){
 }
 if (args.h || process.argv[process.argv.indexOf('--help')]){
     help();
+    process.exit(1);
 }
 
 
@@ -44,6 +45,7 @@ function rules(){
 }
 if (args.r || process.argv[process.argv.indexOf('--rules')]){
     rules();
+    process.exit(1);
 }
 
 
@@ -53,6 +55,7 @@ if (process.argv[2] !== undefined && process.argv[2].toUpperCase() !== 'ROCK' &&
     help();
     rules()
     process.exit(1);
+   
 }
 
 console.log(JSON.stringify(rpsls(process.argv[2])));
