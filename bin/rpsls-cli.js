@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-
+//export {rules_rpsls};
 import { rpsls } from "../lib/rpsls.js"
 import minimist from 'minimist'
+
 //help message
 var args = minimist(process.argv.slice(2));
 
@@ -27,7 +28,7 @@ if (args.h || process.argv[process.argv.indexOf('--help')]){
 
 
 //rule message
-function rules(){
+ function rules_rpsls(){
     console.log(
         "Rules for Rock Paper Scissors\n" +
         "\n" + 
@@ -44,19 +45,9 @@ function rules(){
         )
 }
 if (args.r || process.argv[process.argv.indexOf('--rules')]){
-    rules();
+    rules_rpsls();
     process.exit(1);
 }
-/*
-
-if (process.argv[2] !== undefined && process.argv[2].toUpperCase() !== 'ROCK' && process.argv[2].toUpperCase() !== 'PAPER' && process.argv[2].toUpperCase() !== 'SCISSORS' && process.argv[2].toUpperCase() !== 'LIZARD'&&process.argv[2].toUpperCase() !== 'SPOCK'){
-   
-    console.error (`${process.argv[2]} is out of range.`)
-    help();
-    rules()
-    process.exit(1);
-   
-}*/
 
 try {
 console.log(JSON.stringify(rpsls(process.argv[2])));
@@ -66,7 +57,7 @@ catch(error){
     if (error instanceof RangeError){
         console.error (`${process.argv[2]} is out of range.`)
         help();
-        rules()
+        rules_rpsls()
         process.exit(1);
        
     }
