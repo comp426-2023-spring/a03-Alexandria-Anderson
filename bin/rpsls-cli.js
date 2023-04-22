@@ -45,7 +45,7 @@ if (args.h || process.argv[process.argv.indexOf('--help')]){
         )
 }
 if (args.r || process.argv[process.argv.indexOf('--rules')]){
-    rules_rpsls();
+    rules();
     process.exit(1);
 }
 
@@ -56,7 +56,7 @@ process.exit(0);
 catch(error){
     if (error instanceof RangeError){
         console.error (`${process.argv[2]} is out of range.`)
-        help();
+        //help();
         rules()
         process.exit(1);
        
