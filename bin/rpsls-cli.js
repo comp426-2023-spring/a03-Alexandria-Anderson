@@ -28,7 +28,7 @@ if (args.h || process.argv[process.argv.indexOf('--help')]){
 
 
 //rule message
- function rules_rpsls(){
+ function rules(){
     console.log(
         "Rules for Rock Paper Scissors\n" +
         "\n" + 
@@ -57,7 +57,7 @@ catch(error){
     if (error instanceof RangeError){
         console.error (`${process.argv[2]} is out of range.`)
         help();
-        rules_rpsls()
+        rules()
         process.exit(1);
        
     }

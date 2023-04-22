@@ -48,7 +48,7 @@ try {
         if (error instanceof RangeError){
             console.error (`${process.argv[2]} is out of range.`)
             help();
-            rules_rpsls()
+            rules()
             process.exit(1);
            
         }
