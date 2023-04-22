@@ -46,16 +46,10 @@ try {
     } 
     catch(error){
         if (error instanceof RangeError){
-            console.error (`${process.argv[2]} is out of range.`)
+          //  console.error (`${process.argv[2]} is out of range.`)
             //help();
             rules()
             process.exit(1);
            
         }
     }
-
-//if no argument is given, return the JSON for the players move
-//the unlabed argument is the players move. If supplied, return the object from the importable rps fucntion
-
-//if the argument is not rock, paper, or scissors then return an out of range error and the error 
-//handler should return the help and rule dialogue

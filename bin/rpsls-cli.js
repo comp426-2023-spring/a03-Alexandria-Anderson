@@ -55,7 +55,7 @@ process.exit(0);
 } 
 catch(error){
     if (error instanceof RangeError){
-        console.error (`${process.argv[2]} is out of range.`)
+       // console.error (`${process.argv[2]} is out of range.`)
         //help();
         rules()
         process.exit(1);
