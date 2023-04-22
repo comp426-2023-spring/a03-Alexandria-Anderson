@@ -40,16 +40,19 @@ if (args.r || process.argv[process.argv.indexOf('--rules')]){
   rules();
 }
 
-if (process.argv[2] != undefined && process.argv[2].toUpperCase() !== 'ROCK' && process.argv[2].toUpperCase() !== 'PAPER' && process.argv[2].toUpperCase() !== 'SCISSORS'){
-    
-    console.error (`${process.argv[2]} is out of range.`);
-    help();
-    rules();
-    process.exit(1);
-    
-}
-
-console.log(JSON.stringify(rps(process.argv[2])));
+try {
+    console.log(JSON.stringify(rps(process.argv[2])));
+    process.exit(0);
+    } 
+    catch(error){
+        if (error instanceof RangeError){
+            console.error (`${process.argv[2]} is out of range.`)
+            help();
+            rules_rpsls()
+            process.exit(1);
+           
+        }
+    }
 
 //if no argument is given, return the JSON for the players move
 //the unlabed argument is the players move. If supplied, return the object from the importable rps fucntion
