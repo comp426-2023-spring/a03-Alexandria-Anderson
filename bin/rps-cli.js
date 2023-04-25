@@ -8,7 +8,7 @@ var args = minimist(process.argv.slice(2));
 function help(){
     console.log(
         "Usage: node-rps [SHOT]\n" +
-        "Play Rock Paper Scissors (RPS)\n" + 
+        "Play Rock Paper Scissors (RPS):\n" + 
         " \n" + 
         "  -h, --help       display this help message and exit\n"+
         "  -r, --rules      display the rule and exit\n" + 
@@ -47,7 +47,7 @@ try {
     catch(error){
         if (error instanceof RangeError){
           //  console.error (`${process.argv[2]} is out of range.`)
-            //help();
+            help();
             rules()
             process.exit(1);
            
