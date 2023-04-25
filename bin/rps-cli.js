@@ -28,7 +28,7 @@ if (args.h || process.argv[process.argv.indexOf('--help')]){
 //rule message
 function rules(){
     console.log(
-        "Rules for Rock Paper Scissors\n" +
+        "Rules for Rock Paper Scissors:\n" +
         "\n" + 
         "  - Scissors CUTS Paper\n"+
         "  - Paper COVERS Rock\n" + 
